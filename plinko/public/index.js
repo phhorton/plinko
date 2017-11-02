@@ -1,11 +1,3 @@
-<html>
-<head>
-
-<script  src="http://code.jquery.com/jquery-3.2.1.min.js"
-         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-         crossorigin="anonymous">
-</script>
-<script>
 $(document).ready(function() {
   var logedIn;
   var theScore;
@@ -90,37 +82,3 @@ $(document).ready(function() {
   });
 
 }
-
-</script>
-
-
-</head>
-
-  <p>User name: <input id = "UserName" type="text" value=""><br></p>
-  <input id = "UserNameSubmit"  type="submit" value="Submit">
-    
-  <div id = "ShowScore" >
-  <p> Your score: <span id = "UserSoreAccumulated"></span></p> 
-  </div>
-  
-  <div id = "ChooseBeginningPlace">
-  <p> Which slot do you want to drop your chip in?<p>
-  <select id = "SelectedSlot">
-    <option value=1>1</option>
-    <option value=2>2</option>
-    <option value=3>3</option>
-    <option value=4>4</option>
-    <option value=5>5</option>
-    <option value=6>6</option>
-  </select>
-  <button id = "StartButton" type = "button" on-click="StartDropping" >Click to start</button>
-  </div>
-
-
-
-  <div id = "ShowBoard">
-  
-  
-  <div>
-
-</html>
