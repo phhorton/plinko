@@ -8,20 +8,20 @@ $(document).ready(function() {
     positionArray[i] = new Array(2);
   }
   
-  // $("#UserNameSubmit").click(function(){
-  //   var url = "getuserscore?q="+$("#UserName").val();
-  //   $.getJSON(url,function(data){
-  //     theScore += data[1];
-  //     $("UserSoreAccumulated").html(theScore);
-  //   })
+  $("#UserNameSubmit").click(function(){
+    var url = "getuserscore?q="+$("#UserName").val();
+    $.getJSON(url,function(data){
+      theScore += data[1];
+      $("#UserSoreAccumulated").html(theScore);
+    })
 
-  //   .done(function() { console.log('getJSON request succeeded!'); })
-  //   .fail(function() { 
-  //     console.log('fail to find, create new user'); 
-  //     console.log("incoming "+jqXHR.responseText);
-  //   })
-  //   logedIn = 1;    
-  // });
+    .done(function() { console.log('getJSON request succeeded!'); })
+    .fail(function() { 
+      // console.log('fail to find, create new user'); 
+      // console.log("incoming "+jqXHR.responseText);
+    })
+    logedIn = 1;    
+  });
 
   $("#StartButton").click(function(){
     var holdH = $("#SelectedSlot").val();
@@ -82,7 +82,7 @@ $(document).ready(function() {
 
     console.log(theScore);
 
-    $("UserSoreAccumulated").html()  = theScore;
+    $("#UserSoreAccumulated").text(theScore);
 
   });
 
