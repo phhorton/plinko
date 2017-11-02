@@ -8,29 +8,29 @@ $(document).ready(function() {
     positionArray[i] = new Array(2);
   }
   
-  $("#UserNameSubmit").on-click(function{
-    var url = "getuserscore?q="+$("#UserName").val();
-    $.getJSON(url,function(data){
-      theScore += data[1];
-      $("UserSoreAccumulated").html(theScore);
-    })
+  // $("#UserNameSubmit").click(function(){
+  //   var url = "getuserscore?q="+$("#UserName").val();
+  //   $.getJSON(url,function(data){
+  //     theScore += data[1];
+  //     $("UserSoreAccumulated").html(theScore);
+  //   })
 
-    .done(function() { console.log('getJSON request succeeded!'); })
-    .fail(function() {
-       
-      console.log('fail to find, create new user'); 
-      console.log("incoming "+jqXHR.responseText);
-    })
-    logedIn = 1;
-    
-    .always(function() { console.log('getJSON request ended!');});
-  });
+  //   .done(function() { console.log('getJSON request succeeded!'); })
+  //   .fail(function() { 
+  //     console.log('fail to find, create new user'); 
+  //     console.log("incoming "+jqXHR.responseText);
+  //   })
+  //   logedIn = 1;    
+  // });
 
-  $("#StarButton").on-click(function(){
+  $("#StartButton").click(function(){
     var holdH = $("#SelectedSlot").val();
     var holdV = 1;
-    var H = Number(holdx);
-    var V = Number(holdy);
+
+    console.log("droping");
+
+    var H = Number(holdH);
+    var V = Number(holdV);
     positionArray[0][0] = H;
     positionArray[0][1] = V; 
     for(var i = 1; i < 10; i++ ){
@@ -45,7 +45,7 @@ $(document).ready(function() {
           H = H - 0.5;
         }
         else{
-          if(randomnNum == 1){
+          if(randomNum == 1){
             H = H + 0.5;
           }
           else{
@@ -54,7 +54,7 @@ $(document).ready(function() {
         }
       }
       else{
-        if(randomnNum == 1){
+        if(randomNum == 1){
           H = H + 0.5;
         }
         else{
@@ -62,7 +62,7 @@ $(document).ready(function() {
         }
       }
       positionArray[i][0] = H;
-      positionArray[i][1] = Y;    
+      positionArray[i][1] = V;    
     }
     if(H == 1.5){
       theScore = theScore + 500;
@@ -79,6 +79,11 @@ $(document).ready(function() {
     else if (H == 5.5){
       theScore = theScore + 500;
     }
+
+    console.log(theScore);
+
+    $("UserSoreAccumulated").html()  = theScore;
+
   });
 
-}
+});
