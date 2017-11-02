@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.sendFile('index.html', { root: 'public' });
@@ -11,7 +13,7 @@ router.get('/getuserscore', function(req,res,next){
   var foundUser = 0;
   var scoreResult = 0;
   var fileString;
-  fs.readFIle(_dirname+ '/user.dat.txt', functiton(err,data){
+  fs.readFileSync(_dirname+ '/user.dat.txt', function(err,data){
     if(err) throw err;
     var userArray = data.toString().split("\n");
     var fileString = data.toString();
@@ -24,18 +26,18 @@ router.get('/getuserscore', function(req,res,next){
         var scoreResult = detailArray[1];
       }
     }
+    if (foundUser == 1){
+      jsonresult.push(scoreResult);
+    }
+    else {
+      var newfileString;
+      newfileString = fileString + "\nmyRe 0";
+      fs.writeFile(_dirname+'/user.dat.txt', newfileString, function(err){
+        if(err) throw err;
+      });
+      jsonresult.push(scoreResult);
+    }
   });
-  if (foundUser == 1){
-    jsonresult.push(scoreResult);
-  }
-  else {
-    var newfileString;
-    newfileString = fileString + "\nmyRe 0";
-    fs.writeFile(_dirname+'/user.dat.txt', newfileString, function(err){
-      if(err) throw err;
-    });
-    jsonresult.push(scoreResult);
-  }
   res.status(200).json(jsonresult);
 });
 
