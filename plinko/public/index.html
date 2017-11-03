@@ -5,12 +5,11 @@
          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
          crossorigin="anonymous">
 </script>
-         
+<script></script>         
 <script src="index.js">
 $(document).ready(function(){
     let pos = $('#box').position();
-    let fromal = pos;
-    console.log(pos);
+    
     $("#StartButton").click(function() {
     	let slot = $('#SelectedSlot').val();
     	$('#box').animate({top: pos.top = 0, left: pos.left = 50*(slot-1)}, 1);
@@ -32,9 +31,12 @@ $(document).ready(function(){
 
   <p>User name: <input id = "UserName" type="text" value=""><br></p>
   <input id = "UserNameSubmit"  type="submit" value="Submit">
-    
+  <div id="DisplayUser">
+  <p> Current User: <span id="DisplayUserName"></span></p>
+  </div>  
   <div id = "ShowScore" >
-  <p> Your score: <span id = "UserSoreAccumulated"></span></p> 
+  <p> Your score: <span id = "UserSoreAccumulated"></span></p>
+  <p> You just earned: <span id="UserScoreEarned"></span></p> 
   </div>
   
   <div id = "ChooseBeginningPlace">
@@ -50,11 +52,9 @@ $(document).ready(function(){
   <button id = "StartButton" type = "button" on-click="StartDropping" >Click to start</button>
   </div>
 
-
-
   <div id = "ShowBoard">
   </div>
-  
+
   <div id = "box">
-</div>
+  </div>
 </html>

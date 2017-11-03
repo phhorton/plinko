@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var logedIn;
   var theScore;
+  var earned = 0;
   logedIn = 0;
   theScore = 0;
   var positionArray = new Array(10);
@@ -62,27 +63,35 @@ $(document).ready(function() {
         }
       }
       positionArray[i][0] = H;
-      positionArray[i][1] = V;    
+      positionArray[i][1] = V;
+      console.log(H);    
     }
     if(H == 1.5){
       theScore = theScore + 500;
+      earned = 500;
     }
     else if (H == 2.5){
       theScore = theScore + 0;
+      earned = 0;
     }
     else if (H == 3.5){
       theScore  = theScore + 1000;
+      earned = 1000;
     }
     else if (H == 4.5){
       theScore = theScore + 0;
+      earned = 0;
     } 
     else if (H == 5.5){
       theScore = theScore + 500;
+      earned = 500;
     }
-
+    
+    console.log(H);
     console.log(theScore);
 
     $("#UserSoreAccumulated").text(theScore);
+    $("#UserScoreEarned").text(earned);
 
   });
 
