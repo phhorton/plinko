@@ -6,7 +6,25 @@
          crossorigin="anonymous">
 </script>
          
-<script src = "index.js">
+<script src="index.js">
+$(document).ready(function(){
+    let pos = $('#box').position();
+    let fromal = pos;
+    console.log(pos);
+    $("#StartButton").click(function() {
+    	let slot = $('#SelectedSlot').val();
+    	$('#box').animate({top: pos.top = 0, left: pos.left = 50*(slot-1)}, 1);
+        $("#box").animate({top: pos.top = pos.top+50}, 500);
+        for (let i = 1; i < positions.length; i++) {
+            if(positions[i] > positions[i-1]) {
+              $("#box").animate({top: pos.top = pos.top+50, left: pos.left = pos.left+50}, 500);
+            }
+            else {
+              $("#box").animate({top: pos.top = pos.top+50, left: pos.left = pos.left-50}, 500);
+            }
+        }
+    });
+});
 </script>
 
 
@@ -35,8 +53,8 @@
 
 
   <div id = "ShowBoard">
+  </div>
   
-  
-  <div>
-
+  <div id = "box">
+</div>
 </html>
