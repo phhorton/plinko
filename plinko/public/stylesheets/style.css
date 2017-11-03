@@ -1,8 +1,17 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightblue;
 }
-
-a {
-  color: #00B7FF;
+h1 {
+  padding: 50px;
+  text-align: center;
+  color: purple;
+}
+p {
+  color: red;
+}
+span {
+  font: 16px "Times New Roman";
+  color: green;
 }

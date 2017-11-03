@@ -84,8 +84,8 @@ $(document).ready(function() {
     console.log(H);
     console.log(theScore);
 
-    $("#UserSoreAccumulated").text(theScore);
-    $("#UserScoreEarned").text(earned);
+    $("#UserSoreAccumulated").text("$"+theScore);
+    $("#UserScoreEarned").text("$"+earned);
 
   });
 
