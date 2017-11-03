@@ -10,18 +10,12 @@ $(document).ready(function() {
   }
   
   $("#UserNameSubmit").click(function(){
-    var url = "getuserscore?q="+$("#UserName").val();
-    $.getJSON(url,function(data){
-      theScore += data[1];
-      $("#UserSoreAccumulated").html(theScore);
-    })
-
-    .done(function() { console.log('getJSON request succeeded!'); })
-    .fail(function() { 
-      // console.log('fail to find, create new user'); 
-      // console.log("incoming "+jqXHR.responseText);
-    })
-    logedIn = 1;    
+    var user_name = $('#UserName').val();
+    $('#DisplayUserName').text(user_name);
+    theScore = 0;
+    $('UserSoreAccumulated').text(0);
+    earned = 0;
+    $('UserScoreEarned').text(0);    
   });
 
   $("#StartButton").click(function(){
